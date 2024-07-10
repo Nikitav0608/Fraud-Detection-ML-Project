@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Fraud Detection</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #C9E4CA
+    }
+    .container {
+      max-width: 400px; /* reduced width */
+      margin: 40px auto;
+      padding: 20px;
+      background-color: #fff;
+      border: 1px solid #ddd;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+    }
+    .header {
+      background-color: #333;
+      color: #fff;
+      padding: 10px;
+      text-align: center;
+    }
+    .header h2 {
+      margin: 0;
+    }
+    .form-container {
+      padding: 20px;
+    }
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+    input[type="text"], select {
+      width: 100%; /* equal width */
+      height: 30px;
+      margin-bottom: 10px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      font-size: 16px; /* increased font size */
+    }
+    input[type="submit"] {
+      background-color: #4CAF50;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    input[type="submit"]:hover {
+      background-color: #3e8e41;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h2>Fraud Detection</h2>
+    </div>
+    <div class="form-container">
+      <form action="/predict" method="post">
+        <label for="Step">Step:</label>
+        <input type="text" id="step" name="Step"><br>
+
+        <label for="Type">Type:</label>
+        <select id="Type" name="Type">
+          <option value="1">CASH_OUT</option>
+          <option value="2">PAYMENT</option>
+          <option value="3">CASH_IN</option>
+          <option value="4">TRANSFER</option>
+          <option value="5">DEBIT</option>
+        </select><br>
+
+        <label for="Amount">Amount:</label>
+        <input type="text" id="Amount" name="Amount"><br>
+
+        <label for="Name_of_the_Originator">Name_of_the_Originator:</label>
+        <input type="text" id="Name_of_the_Originator" name="Name_of_the_Originator"><br>
+
+        <label for="oldbalanceOrg">oldbalanceOrg:</label>
+        <input type="text" id="oldbalanceOrg" name="oldbalanceOrg"><br>
+
+        <label for="newbalanceOrig">newbalanceOrig:</label>
+        <input type="text" id="newbalanceOrig" name="newbalanceOrig"><br>
+
+        <label for="Name_of_the_Reciever">Name_of_the_Reciever:</label>
+        <input type="text" id="Name_of_the_Reciever" name="Name_of_the_Reciever"><br>
+
+        <label for="oldbalanceDest">oldbalanceDest:</label>
+        <input type="text" id="oldbalanceDest" name="oldbalanceDest"><br>
+
+        <label for="newbalanceDest">newbalanceDest:</label>
+        <input type="text" id="newbalanceDest" name="newbalanceDest"><br>
+
+        <input type="submit" value="Predict">
+      </form>
+    </div>
+  </div>
+
+</body>
+</html>
